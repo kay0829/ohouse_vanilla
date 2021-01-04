@@ -1,0 +1,26 @@
+$columns: 12;
+$column-width: 75px;
+$gutter: 10px;
+
+.container {
+    width: 100%;
+    max-width: ($column-width+ $gutter * 2) * $columns;
+    padding: 0 $gutter;
+    margin: 0 auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -#{$gutter};
+}
+
+[class *= "col-"] {
+    padding: 0 $gutter;
+}
+
+@for $i from 1 through 12 {
+    .col-#{$i} {
+        width: ($column-width + $gutter * 2) * $i;
+    }
+}

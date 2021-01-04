@@ -1,0 +1,141 @@
+* {
+  margin: 0;
+  box-sizing: border-box; }
+
+body {
+  font-family: "Noto Sans KR", sans-serif; }
+
+/* Reset CSS */
+a {
+  color: inherit;
+  text-decoration: none !important; }
+
+button,
+input,
+textarea {
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 16px; }
+
+button:focus,
+button:active,
+input:focus,
+input:active,
+textarea:focus,
+textarea:active {
+  outline: none;
+  box-shadow: none; }
+
+ul,
+ol,
+li {
+  list-style-type: none;
+  padding-left: 0;
+  margin-left: 0; }
+
+.container {
+  width: 100%;
+  max-width: 1140px;
+  padding: 0 10px;
+  margin: 0 auto; }
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -10px; }
+
+[class*="col-"] {
+  padding: 0 10px; }
+
+.col-1 {
+  width: 95px; }
+
+.col-2 {
+  width: 190px; }
+
+.col-3 {
+  width: 285px; }
+
+.col-4 {
+  width: 380px; }
+
+.col-5 {
+  width: 475px; }
+
+.col-6 {
+  width: 570px; }
+
+.col-7 {
+  width: 665px; }
+
+.col-8 {
+  width: 760px; }
+
+.col-9 {
+  width: 855px; }
+
+.col-10 {
+  width: 950px; }
+
+.col-11 {
+  width: 1045px; }
+
+.col-12 {
+  width: 1140px; }
+
+@font-face {
+  font-family: 'icomoon';
+  src: url("./assets/fonts/icomoon.eot?rbj5gh");
+  src: url("./assets/fonts/icomoon.eot?rbj5gh#iefix") format("embedded-opentype"), url("./assets/fonts/icomoon.ttfh") format("truetype"), url("./assets/fonts/icomoon.woff") format("woff"), url("./assets/fonts/icomoon.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block; }
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.icon-bell:before {
+  content: "\e900"; }
+
+.icon-bookmark:before {
+  content: "\e901"; }
+
+.icon-cart:before {
+  content: "\e902"; }
+
+.icon-check:before {
+  content: "\e903"; }
+
+.icon-chevron:before {
+  content: "\e904"; }
+
+.icon-close:before {
+  content: "\e905"; }
+
+.icon-filled-bookmark:before {
+  content: "\e906"; }
+
+.icon-filled-star:before {
+  content: "\e907"; }
+
+.icon-lock:before {
+  content: "\e908"; }
+
+.icon-new:before {
+  content: "\e909";
+  color: #f86d7d; }
+
+.icon-search:before {
+  content: "\e90a"; }
+
+.icon-star:before {
+  content: "\e90b"; }
