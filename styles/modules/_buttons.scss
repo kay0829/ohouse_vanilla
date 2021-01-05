@@ -1,0 +1,23 @@
+.buy-buttons {
+    display: flex;
+}
+
+.button {
+    height: 40px;
+    padding: 0 8px;
+    color: $white;
+    background-color: $blue;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.button.big {
+    height: 55px;
+}
+
+.button.reverse {
+    border: 1px solid $blue;
+    color: $blue;
+    background-color: $white;
+}
