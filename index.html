@@ -9,26 +9,172 @@
     <title>NailHouse</title>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1><img src="./assets/logo.svg" alt="내일의 집"></h1>
-        </header>
-        <nav>
-            <ul>
-                <li><a href="#">커뮤니티</a></li>
-                <li><a href="#">스토어</a></li>
-                <li><a href="#">인테리어시공</a></li>
-            </ul>
-        </nav>
-        <div class="search-form">
-            <i class="icon-search"></i>
+    <div class="page-header">
+        <div class="container">
+            <div class="page-header-contents">
+                <div class="page-header-left">
+                    <header class="page-logo">
+                        <h1><a href="#"><img src="./assets/logo.svg" alt="내일의 집"></a></h1>
+                    </header>
+                    <nav class="gnb-menu">
+                        <h1 class="sr-only">menu</h1>
+                        <ul class="gnb-items">
+                            <li class="gnb-item"><a href="#">커뮤니티</a></li>
+                            <li class="gnb-item"><a href="#">스토어</a></li>
+                            <li class="gnb-item"><a href="#">인테리어시공</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                
+                <div class="page-header-right">
+                    <div class="search-form">
+                        <i class="icon-search"></i>
+                        <input type="text" placeholder="스토어 검색" />
+                    </div>
+                    <div class="utils">
+                        <a href="#" class="utils-item">
+                            <i class="icon-bookmark"></i>
+                        </a>
+                        <a href="#" class="utils-item">
+                            <i class="icon-bell"></i>
+                        </a>
+                        <a href="#" class="utils-item">
+                            <i class="icon-cart"></i>
+                        </a>
+                        <button type="button" class="user-img">
+                            <!-- <img src="./public/icon-default-user.svg" alt="default-user"> -->
+                        </button>
+                    </div>
+                    <button class="button">
+                        글쓰기
+                        <i class="icon-chevron"></i>
+                    </button>
+                </div>
+            </div>
         </div>
-        <div class="utils">
-
-        </div>
-        <button>
-
-        </button>
     </div>
+
+    <div class="category-menu">
+        <div class="container">
+            <ol class="category-list">
+                <li><a href="#">스토어</a></li>
+                <li><a href="#">홈카테고리</a></li>
+                <li><a href="#">신혼가구</a></li>
+                <li><a href="#">베스트</a></li>
+                <li><a href="#">오늘의딜</a></li>
+                <li><a href="#">연휴특가</a></li>
+                <li><a href="#">월동준비</a></li>
+                <li><a href="#">리퍼마켓</a></li>
+                <li><a href="#">기획전</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="breadcrumb-wrap">
+        <div class="container">
+            <nav class="breadcrumb">
+                <ol class="breadcrumb-list">
+                    <li>
+                        <a href="#">가전</a>
+                        <i class="icon-chevron"></i>
+                    </li>
+                    <li>
+                        <a href="#">계절가전</a>
+                        <i class="icon-chevron"></i>
+                    </li>
+                    <li>
+                        <a href="#">전기히터/온풍기</a>
+                        <i class="icon-chevron"></i>
+                    </li>
+                    <li>
+                        <a href="#">전기히터</a>
+                    </li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <div class="product-selling">
+        <div class="container">
+            <div class="row">
+                <div class="col-7">
+                    <div class="product-selling-wrap">
+                        <div class="product-selling-preview">
+                            <ul class="product-selling-preview-list">
+                                <li><button type="button"><img src="./public/img-product-1.svg" alt=""></button></li>
+                                <li><button type="button"><img src="./public/img-product-2.svg" alt=""></button></li>
+                                <li><button type="button"><img src="./public/img-product-3.svg" alt=""></button></li>
+                                <li><button type="button"><img src="./public/img-product-4.svg" alt=""></button></li>
+                            </ul>
+                        </div>
+                        <div class="product-selling-carousel">
+                            <img class="hide" src="./public/img-product-1.svg" alt="">
+                            <img class="hide" src="./public/img-product-2.svg" alt="">
+                            <img class="hide" src="./public/img-product-3.svg" alt="">
+                            <img class="hide" src="./public/img-product-4.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-5">
+                    <div class="product-selling-content-wrap">
+                        <div class="product-selling-content-header">
+                            <div class="product-selling-content-header-title">
+                                <p><a href="#" class="company-name"></a></p>
+                                <h1 class="product-name"></h1>
+                                <div class="review">
+                                    <div class="review-star">
+                                        <i class="icon-filled-star"></i>
+                                        <i class="icon-filled-star"></i>
+                                        <i class="icon-filled-star"></i>
+                                        <i class="icon-filled-star"></i>
+                                        <i class="icon-filled-star"></i>
+                                    </div>
+                                    <div class="review-number">
+                                        <a href="#"></a>
+                                    </div>
+                                </div>
+                                <div><a href="#" class="review-number"></a></div>
+                            </div>
+                            <div class="product-selling-content-header-price">
+                                <span class="product-dc-percent">
+                                    <span class="number"></span>
+                                    <span class="percent">%</span>
+                                </span>
+                                <div class="product-price-wrap">
+                                    <span class="product-before-dc-price">
+                                        <span class="number"></span>
+                                        <span class="won">원</span>
+                                    </span>
+                                    <span class="product-price">
+                                        <span class="number"></span>
+                                        <span class="won">원</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="point-guide">
+                                <span></span>적립해드립니다 (VIP 3배 혜택 적용됨)
+                            </div>
+                        </div>
+                        <div class="product-selling-delivery-guide">
+                            <span>일반택배</span>
+                            <span class="delivery-fee"></span>
+                        </div>
+                        <div class="product-selling-content-option">
+                            <input class="product-choice" name="choice" placeholder="선택" disabled/>
+                            <input class="add-choice" name="add-choice" placeholder="추가상품(선택)" disabled/>
+                        </div>
+                        <div class="buy-buttons">
+                            <button type="button" class="button big reverse">장바구니</button>
+                            <button type="button" class="button big">바로구매</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/page-header.js"></script>
+    <script src="./js/product-carousel.js"></script>
+    <script src="./js/product-content.js"></script>
 </body>
 </html>
