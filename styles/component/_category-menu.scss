@@ -1,0 +1,22 @@
+.category-menu {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    border-bottom: 1px solid $border;
+}
+
+.category-list {
+    display: flex;
+    li {
+        margin-right: 20px;
+        @include small($dark);
+        font-weight: 700;
+        &:hover {
+            color: $blue;
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}

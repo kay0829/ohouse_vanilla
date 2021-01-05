@@ -1,9 +1,19 @@
-@import './base/reset.scss';
+@import './base/reset';
+@import './base/commons';
 
 @import './constants/colors';
 @import './constants/fonts';
 
 @import './modules/grids';
 @import './modules/icons';
+@import './modules/input';
+@import './modules/buttons';
 
 @import './mixins/typography';
+
+@import './component/page-header';
+@import './component/category-menu';
+@import './component/bread-crumb';
+@import './component/product-header-carousel';
+@import './component/product-header-content';
+@import './component/product-header-content2';

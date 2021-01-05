@@ -1,0 +1,28 @@
+.product-selling-content-option {
+    margin-top: 24px;
+    margin-bottom: 22px;
+
+    .product-choice,
+    .add-choice {
+        width: 455px;
+        background-color: transparent;
+        cursor: pointer;
+
+        &:hover {
+            background-color: $background;
+        }
+    }
+
+    .product-choice {
+        margin-bottom: 8px;
+    }
+}
+
+.buy-buttons {
+    button {
+        width: 223px;
+    }
+    .reverse {
+        margin-right: 8px;
+    }
+}

@@ -1,0 +1,146 @@
+.product-selling-content-header {
+    border-bottom: 1px solid $border;
+}
+
+.company-name {
+    margin-bottom: 4px;
+    @include tiny($blue);
+    font-weight: 700;
+}
+
+.product-name {
+    margin-bottom: 8px;
+    @include large($dark);
+    font-weight: 400;
+}
+
+.review {
+    display: flex;
+    margin-bottom: 16px;
+    .review-star {
+        @include small($border);
+    }
+    .review-number a {
+        margin-left: 8px;
+        @include tiny($blue);
+        font-weight: 700;
+    }
+    .first-review {
+        padding: 2px 6px;
+        font-size: 12px;
+        line-height: 16px;
+        letter-spacing: -0.005em;
+        font-weight: 700;
+        color: $white !important;
+        background-color: $green;
+        border-radius: 4px;
+    }
+}
+
+.product-selling-content-header-price {
+    display: flex;
+    margin-bottom: 12px;
+
+    .product-price-wrap {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .product-dc-percent {
+        display: flex;
+        align-items: flex-end;
+        margin-right: 16px;
+        font-weight: 700;
+        color: $blue;
+        & .number {
+            position: relative;
+            margin-right: 2px;
+            font-size: 44px;
+            line-height: 54px;
+        }
+
+        & .percent {
+            margin-bottom: 5px;
+            font-size: 20px;
+            line-height: 20px;
+        }
+    }
+
+    .product-before-dc-price {
+        display: flex;
+        @include small($secondary);
+        font-weight: 400;
+
+        & .number {
+            text-decoration: line-through;
+        }
+    }
+
+    .product-price {
+        display: flex;
+        align-items: center;
+        & .number{
+            font-size: 32px;
+            line-height: 32px;
+            letter-spacing: -0.02em;
+            font-weight: 700;
+        }
+        & .won {
+            margin-right: 8px;
+            font-size: 28px;
+            line-height: 32px;
+            letter-spacing: -0.02em;
+            font-weight: 500;
+        }
+
+        .special-price {
+            padding: 0 6px;
+            @include micro($white);
+            font-weight: 700;
+            background-color: $red;
+            border-radius: 4px;
+        }
+    }
+}
+
+.point-guide {
+    margin-bottom: 16px;
+    @include tiny($secondary);
+    font-weight: 400;
+    span {
+        margin-right: 3px;
+        @include tiny($blue);
+        font-weight: 700;
+    }
+}
+
+.product-selling-delivery-guide {
+    display: flex;
+    flex-direction: column;
+    margin-top: 16px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid $border;
+    
+    span {
+        margin-bottom: 8px;
+        @include base($primary);
+        font-weight: 400;
+    }
+
+    .delivery-fee {
+        width: 57px;
+        height: 20px;
+        padding: 2px 6px;
+        @include micro($secondary);
+        font-weight: 700;
+        background-color: $border;
+        border-radius: 4px;
+    }
+    .add-fee {
+        width: 100%;
+        padding: 0 0;
+        @include small($secondary);
+        font-weight: 400;
+        background-color: transparent;
+    }
+}

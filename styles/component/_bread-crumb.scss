@@ -1,0 +1,25 @@
+.breadcrumb {
+    margin-top: 24px;
+
+    &-list {
+        display: flex;
+
+        li {
+            @include small($secondary);
+            font-weight: 400;
+            
+            a {
+                margin-right: 8px;
+                &:hover {
+                    color: $tertiary;
+                }
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+            i {
+                margin-right: 8px;
+            }
+        }
+    }
+}
