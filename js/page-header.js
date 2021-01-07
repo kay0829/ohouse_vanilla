@@ -6,6 +6,7 @@ const closeButton = document.querySelectorAll('.search-list li button');
 const writeForSearch = document.querySelector('.write-for-search');
 const writingForSearch = document.querySelector('.write-for-search li');
 
+document.cookie = "search_historyies=";
 let search_histories = ['의자', '책상', '에어프라이어'];
 
 //input 클릭이벤트 -> search-list div modal
@@ -22,6 +23,8 @@ searchInput.addEventListener('mousedown', (e) => {
 function createSearchListA() {
     if(search_histories.length > 5) {
         search_histories.shift();
+        putCookie();
+        alert(document.cookie);
         console.log(search_histories);
     }
     search_histories.forEach((v, i) => {
@@ -36,10 +39,10 @@ function createSearchListA() {
     })
 }
 
-function closeSearchList() {
-    if(search_histories.length === 0) {
-        searchList.classList.remove('show');
-    }
+function putCookie() {
+    document.cookie = "search_historyies=";
+    let temp = search_histories.join('');
+    document.cookie += temp;
 }
 
 //input 입력이벤트 -> search-list div modal 막고, 입력하는 내용 표시
@@ -61,10 +64,14 @@ searchInput.addEventListener('keydown', (e) =>{
         }
         if(search_histories.includes(e.target.value)) {
             search_histories.splice(search_histories.indexOf(e.target.value), 1);
+            putCookie();
+            alert(document.cookie);
         }
         searchInput.textContent = e.target.value;
         search_histories.push(e.target.value);
         console.log(search_histories);
+        putCookie();
+        alert(document.cookie);
         // window.location.href = `q?=${e.target.value}`;
     }
 })
@@ -79,6 +86,8 @@ searchListA.forEach((v) => {
 closeAllButton.addEventListener('mousedown', () => {
     search_histories = [];
     console.log(search_histories);
+    putCookie();
+    alert(document.cookie);
     searchList.classList.remove('show');
 })
 
@@ -86,6 +95,8 @@ closeButton.forEach((v) => {
     v.addEventListener('mousedown', () => {
         search_histories.splice(search_histories.indexOf(v.previousElementSibling.textContent), 1);
         console.log(search_histories);
+        putCookie();
+        alert(document.cookie);
         searchList.removeChild(v.parentElement);
 
         if(search_histories.length === 0) {
