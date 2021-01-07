@@ -67,18 +67,29 @@
                         </ul>
                     </div>
                     <div class="utils">
-                        <a href="#" class="utils-item">
-                            <i class="icon-bookmark"></i>
-                        </a>
-                        <a href="#" class="utils-item">
-                            <i class="icon-bell"></i>
-                        </a>
-                        <a href="#" class="utils-item">
-                            <i class="icon-cart"></i>
-                        </a>
-                        <button type="button" class="user-img">
-                            <!-- <img src="./public/icon-default-user.svg" alt="default-user"> -->
-                        </button>
+                        <div class="utils-item">
+                            <a href="#">
+                                <i class="icon-bookmark"></i>
+                            </a>
+                            <a href="#">
+                                <i class="icon-bell"></i>
+                            </a>
+                            <a href="#">
+                                <i class="icon-cart"></i>
+                            </a>
+                        </div>
+                        <div class="user-utils">
+                            <button type="button" class="user-img">
+                                <!-- <img src="./public/icon-default-user.svg" alt="default-user"> -->
+                            </button>
+                            <ul class="user-modal">
+                                <li><a href="#">마이페이지</a></li>
+                                <li><a href="#">나의 쇼핑</a></li>
+                                <li><a href="#">이벤트</a></li>
+                                <li><a href="#">로그아웃</a></li>
+    
+                            </ul>
+                        </div>
                     </div>
                     <button class="button">
                         글쓰기
@@ -143,10 +154,10 @@
                             </ul>
                         </div>
                         <div class="product-selling-carousel">
-                            <img class="hide" src="./public/img-product-1.svg" alt="">
-                            <img class="hide" src="./public/img-product-2.svg" alt="">
-                            <img class="hide" src="./public/img-product-3.svg" alt="">
-                            <img class="hide" src="./public/img-product-4.svg" alt="">
+                            <li class=""><img src="./public/img-product-1.svg" alt=""></li>
+                            <li class="hide"><img src="./public/img-product-2.svg" alt=""></li>
+                            <li class="hide"><img src="./public/img-product-3.svg" alt=""></li>
+                            <li class="hide"><img src="./public/img-product-4.svg" alt=""></li>
                         </div>
                     </div>
                 </div>
@@ -200,7 +211,7 @@
                         </div>
                         <div class="buy-buttons">
                             <button type="button" class="button big reverse">장바구니</button>
-                            <button type="button" class="button big">바로구매</button>
+                            <button type="button" class="button big buy-direct">바로구매</button>
                         </div>
                     </div>
                 </div>
@@ -209,6 +220,7 @@
     </div>
 
     <script src="./js/page-header.js"></script>
+    <script src="./js/page-header-modal.js"></script>
     <script src="./js/product-carousel.js"></script>
     <script src="./js/product-content.js"></script>
 </body>
