@@ -24,7 +24,6 @@ function createSearchListA() {
     if(search_histories.length > 5) {
         search_histories.shift();
         putCookie();
-        alert(document.cookie);
         console.log(search_histories);
     }
     search_histories.forEach((v, i) => {
@@ -65,19 +64,22 @@ searchInput.addEventListener('keydown', (e) =>{
         if(search_histories.includes(e.target.value)) {
             search_histories.splice(search_histories.indexOf(e.target.value), 1);
             putCookie();
-            alert(document.cookie);
         }
         searchInput.textContent = e.target.value;
         search_histories.push(e.target.value);
         console.log(search_histories);
         putCookie();
-        alert(document.cookie);
         // window.location.href = `q?=${e.target.value}`;
     }
 })
 
 searchListA.forEach((v) => {
-    v.addEventListener('mousedown', () =>{
+    v.addEventListener('click', () =>{
+        searchInput.value = `${v.textContent}`;
+        search_histories.splice(search_histories.indexOf(v.textContent), 1);
+        search_histories.push(v.textContent);
+        console.log(search_histories);
+        searchList.classList.remove('show');
         // window.location.href = `q?=${v.textContent}`;
     })
 })
@@ -87,16 +89,15 @@ closeAllButton.addEventListener('mousedown', () => {
     search_histories = [];
     console.log(search_histories);
     putCookie();
-    alert(document.cookie);
     searchList.classList.remove('show');
 })
 
 closeButton.forEach((v) => {
-    v.addEventListener('mousedown', () => {
+    v.addEventListener('mousedown', (e) => {
+        e.preventDefault();
         search_histories.splice(search_histories.indexOf(v.previousElementSibling.textContent), 1);
         console.log(search_histories);
         putCookie();
-        alert(document.cookie);
         searchList.removeChild(v.parentElement);
 
         if(search_histories.length === 0) {

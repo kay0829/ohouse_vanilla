@@ -10,7 +10,14 @@ const beforeDcPrice = document.querySelector('.product-before-dc-price .number')
 const pointGuide = document.querySelector('.point-guide span');
 const deliveryFee = document.querySelector('.delivery-fee');
 const addChoice = document.querySelector('.add-choice');
+const cartButton = document.querySelector('.buy-buttons .reverse');
+const buyButton = document.querySelector('.buy-buttons .buy-direct');
 
+const utils = document.querySelector('.utils');
+const utilsItem = document.querySelector('.utils-item');
+const userUtils = document.querySelector('.user-utils');
+
+let login = true;
 //경우의 수
 let review = true;
 let review_rate = 4;
@@ -22,9 +29,29 @@ let dc_price = '32,900';
 let point = 987;
 let delivery_fee = true;
 let single_option = false;
-let sold_out = false;
+let sold_out = true;
 
 window.onload = function() {
+    if(!login) {
+        utils.removeChild(utilsItem);
+        utils.removeChild(userUtils);
+        const unauthorizedDiv = document.createElement('div');
+        const utilsCart = document.createElement('a');
+        const utilsCartIcon = document.createElement('i');
+        const signinButton = document.createElement('button');
+        const signupButton = document.createElement('button');
+
+        unauthorizedDiv.classList.add('unauthorized-condition');
+        utilsCartIcon.classList.add('icon-cart');
+        signinButton.textContent = '로그인';
+        signinButton.classList.add('signin');
+        signupButton.textContent = '회원가입';
+        signupButton.classList.add('signup');
+        utilsCart.append(utilsCartIcon);
+        unauthorizedDiv.append(utilsCart, signinButton, signupButton);
+        utils.append(unauthorizedDiv);
+    }
+
     companyName.textContent = '보야르';
     // productName.innerHTML = '레트로한 감성이 묻어 나는 / 온도 조절과 타이머는 안 되지만 오로지 감성 하나로 승부 보는 / 강아지와 고양이가 겸손해지는 / 캠핑/가정용 400W 미니멀 전기히터 VO-HT015 (안전장치기능탑재)';
     productName.innerHTML = '캠핑/가정용 400W 미니멀 전기히터<br/> VO-HTO15(안전장치기능탑재)';
@@ -74,5 +101,11 @@ window.onload = function() {
 
     if(single_option) {
         addChoice.parentElement.removeChild(addChoice);
+    }
+
+    if(sold_out) {
+        cartButton.textContent = '재입고 알림받기';
+        buyButton.textContent = '품절';
+        buyButton.setAttribute('disabled', '');
     }
 }
