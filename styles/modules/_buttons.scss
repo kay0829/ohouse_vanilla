@@ -21,3 +21,13 @@
     color: $blue;
     background-color: $white;
 }
+
+.button:disabled {
+    color: $primary;
+    background-color: $border;
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: -0.02em;
+    font-weight: 700;
+    cursor: default;
+}
