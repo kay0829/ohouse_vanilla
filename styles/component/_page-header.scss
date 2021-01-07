@@ -174,43 +174,11 @@
     }
 }
 
-.unauthorized-condition {
-    button {
-        padding: 2px 2px;
-        margin: 0 8px;
-        border: none;
-        background-color: inherit;
-        @include small($secondary);
-        font-weight: 700;
-        cursor: pointer;
-
-        &.signin {
-            position: relative;
-            &::after {
-                content: '';
-                position: absolute;
-                top: 9px;
-                left: 50px;
-                width: 1px;
-                height: 16px;
-                border-right: 1px solid $tertiary;
-            }
-        }
-    }
-}
-
 .utils {
     display: flex;
-    align-items: center;
     margin-left: 32px;
 
-    .utils-item,
-    .unauthorized-condition {
-        display: flex;
-    }
-
-    .utils-item a,
-    .unauthorized-condition a {
+    &-item {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -218,7 +186,6 @@
         height: 32px;
         margin-right: 8px;
         border-radius: 50%;
-        cursor: pointer;
 
         i {
             font-size: 24px;
@@ -244,64 +211,5 @@
 
     &:hover {
         border: 2px solid $blue
-    }
-}
-
-.user-utils {
-    position: relative;
-    z-index: 1;
-
-    &.show::before {
-        content: "";
-        position: absolute;
-        z-index: 2;
-        top: calc(100% - 5px);
-        left: 5.5px;
-        border-top:0px solid transparent;
-        border-left: 10px solid transparent;
-        border-right: 10px solid transparent;
-        border-bottom: 16px solid $border;
-    }
-    &.show::after {
-        content: "";
-        position: absolute;
-        z-index: 3;
-        top: calc(100% - 3px);
-        left: 5.5px;
-        border-top: 0px solid transparent;
-        border-left: 10px solid transparent;
-        border-right: 10px solid transparent;
-        border-bottom: 16px solid $white;
-    }
-
-    .user-modal {
-        position: absolute;
-        z-index: 2;
-        top: calc(100% + 10px);
-        left: -85px;
-        width: 200px;
-        max-height: 0;
-        padding: 8px 8px;
-        background-color: transparent;
-        border: 1px solid transparent;
-        border-radius: 4px;
-        overflow: hidden;
-        transition: border-color 200ms ease-in, padding 200ms ease-in,
-            max-height 200ms ease-in, box-shadow 200ms ease-in;
-        
-        &.show {
-            max-height: 192px;
-            background-color: $white;
-            border: 1px solid $border;
-        }
-
-        
-        a {
-            display: inline-block;
-            width: 100%;
-            padding: 10px 0 10px 12px;
-            @include base($primary);
-            font-weight: 400;
-        }
     }
 }

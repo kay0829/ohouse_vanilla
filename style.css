@@ -179,15 +179,6 @@ input {
   color: #3DA8F5;
   background-color: #FFFFFF; }
 
-.button:disabled {
-  color: #3F4150;
-  background-color: #E0E2E7;
-  font-size: 18px;
-  line-height: 28px;
-  letter-spacing: -0.02em;
-  font-weight: 700;
-  cursor: default; }
-
 .page-header {
   border-bottom: 1px solid #E0E2E7; }
   .page-header-contents {
@@ -337,54 +328,23 @@ input {
     left: 10px;
     font-size: 20px; }
 
-.unauthorized-condition button {
-  padding: 2px 2px;
-  margin: 0 8px;
-  border: none;
-  background-color: inherit;
-  font-size: 14px;
-  line-height: 1.71429;
-  letter-spacing: -0.01em;
-  color: #858896;
-  font-weight: 700;
-  cursor: pointer; }
-  .unauthorized-condition button.signin {
-    position: relative; }
-    .unauthorized-condition button.signin::after {
-      content: '';
-      position: absolute;
-      top: 9px;
-      left: 50px;
-      width: 1px;
-      height: 16px;
-      border-right: 1px solid #A2A5AF; }
-
 .utils {
   display: flex;
-  align-items: center;
   margin-left: 32px; }
-  .utils .utils-item,
-  .utils .unauthorized-condition {
-    display: flex; }
-  .utils .utils-item a,
-  .utils .unauthorized-condition a {
+  .utils-item {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 32px;
     height: 32px;
     margin-right: 8px;
-    border-radius: 50%;
-    cursor: pointer; }
-    .utils .utils-item a i,
-    .utils .unauthorized-condition a i {
+    border-radius: 50%; }
+    .utils-item i {
       font-size: 24px;
       text-align: center; }
-    .utils .utils-item a:hover,
-    .utils .unauthorized-condition a:hover {
+    .utils-item:hover {
       background-color: #3DA8F5; }
-      .utils .utils-item a:hover i,
-      .utils .unauthorized-condition a:hover i {
+      .utils-item:hover i {
         color: #FFFFFF; }
 
 .user-img {
@@ -396,56 +356,6 @@ input {
   cursor: pointer; }
   .user-img:hover {
     border: 2px solid #3DA8F5; }
-
-.user-utils {
-  position: relative;
-  z-index: 1; }
-  .user-utils.show::before {
-    content: "";
-    position: absolute;
-    z-index: 2;
-    top: calc(100% - 5px);
-    left: 5.5px;
-    border-top: 0px solid transparent;
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-bottom: 16px solid #E0E2E7; }
-  .user-utils.show::after {
-    content: "";
-    position: absolute;
-    z-index: 3;
-    top: calc(100% - 3px);
-    left: 5.5px;
-    border-top: 0px solid transparent;
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-bottom: 16px solid #FFFFFF; }
-  .user-utils .user-modal {
-    position: absolute;
-    z-index: 2;
-    top: calc(100% + 10px);
-    left: -85px;
-    width: 200px;
-    max-height: 0;
-    padding: 8px 8px;
-    background-color: transparent;
-    border: 1px solid transparent;
-    border-radius: 4px;
-    overflow: hidden;
-    transition: border-color 200ms ease-in, padding 200ms ease-in, max-height 200ms ease-in, box-shadow 200ms ease-in; }
-    .user-utils .user-modal.show {
-      max-height: 192px;
-      background-color: #FFFFFF;
-      border: 1px solid #E0E2E7; }
-    .user-utils .user-modal a {
-      display: inline-block;
-      width: 100%;
-      padding: 10px 0 10px 12px;
-      font-size: 16px;
-      line-height: 1.5;
-      letter-spacing: -0.01em;
-      color: #3F4150;
-      font-weight: 400; }
 
 .category-menu {
   display: flex;
@@ -500,7 +410,6 @@ input {
     margin-bottom: 0; }
 
 .product-selling-preview-list button {
-  position: relative;
   width: 75px;
   height: 75px;
   padding: 0 0;
@@ -511,15 +420,10 @@ input {
   .product-selling-preview-list button::after {
     content: '';
     position: absolute;
-    left: 0;
-    top: 0;
-    width: 69px;
-    height: 0;
-    border-radius: 4px;
-    border: 0px solid transparent; }
+    border: 0px solid #3DA8F5;
+    transition: all 0.2s ease; }
   .product-selling-preview-list button:hover::after {
-    width: 69px;
-    height: 69px;
+    z-index: 2;
     border: 3px solid #3DA8F5; }
   .product-selling-preview-list button img {
     width: 100%;
