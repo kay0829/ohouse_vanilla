@@ -30,7 +30,6 @@ window.onload = function() {
     productName.innerHTML = '캠핑/가정용 400W 미니멀 전기히터<br/> VO-HTO15(안전장치기능탑재)';
     reviewStar.forEach((v, i) => {
         if(i + 1 <= review_rate) {
-            console.log(i);
             v.style.color = '#3DA8F5';
         } else {
             v.style.color = 'inherit';
