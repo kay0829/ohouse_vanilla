@@ -3,4 +3,8 @@ input {
     padding: 0 16px;
     border: 1px solid $border;
     border-radius: 4px;
+
+    &:hover {
+        background-color: $background;
+    }
 }

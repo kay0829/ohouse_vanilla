@@ -48,10 +48,109 @@
     }
 }
 
+.search-form-wrap {
+    position: relative;
+    z-index: 1;
+
+    .search-list,
+    .write-for-search {
+        position: absolute;
+        z-index: 2;
+        top: calc(100% + 4px);
+        left: 0;
+        width: 100%;
+        max-height: 0;
+        background-color: $white;
+        border: 1px solid transparent;
+        border-radius: 4px;
+        overflow: hidden;
+        transition: border-color 200ms ease-in, padding 200ms ease-in,
+            max-height 200ms ease-in, box-shadow 200ms ease-in;
+    
+    &.show {
+        max-height: 272px;
+        border: 1px solid $border;
+    }
+
+        &-history-header,
+        li {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            height: 44px;
+            padding: 10px 16px;
+            border-radius: 2px;
+        }
+
+        &-history-header span,
+        &-history-header button {
+            @include tiny($secondary);
+            font-weight: 400;
+        }
+
+        &-history-header button {
+            background-color: inherit;
+            border: none;
+            cursor: pointer;
+            &:hover {
+                color: $tertiary;
+            }
+        }
+
+        li {
+            &.hide {
+                display: none;
+            }
+
+            &:hover {
+                background-color: $background;
+            }
+            a {
+                width: 100%;
+                @include base($primary);
+                font-weight: 400;
+            }
+
+            button {
+                font-weight: 9px;
+                color: $tertiary;
+                background-color: inherit;
+                border: none;
+                cursor: pointer;
+
+                &:hover {
+                    color: $border;
+                }
+            }
+        }
+    }
+
+    .write-for-search {
+        &.show {
+            max-height: 44px;
+            border: 1px solid $border;
+        }
+
+        li {
+            position: relative;
+            padding-left: 40px;
+            cursor: pointer;
+
+            @include small($primary);
+            i {
+                position: absolute;
+                top: 15px;
+                left: 15px;
+                font-size: 14px;
+                color: #dbdbdb;
+            }
+        }
+    }
+}
+
 .search-form {
     position: relative;
-    width: 264px;
-    margin-right: 32px;
+    width: 100%;
 
     input {
         padding-left: 40px;
@@ -77,6 +176,7 @@
 
 .utils {
     display: flex;
+    margin-left: 32px;
 
     &-item {
         display: flex;
