@@ -695,6 +695,11 @@ input {
   .product-selling-content-option .product-choice,
   .product-selling-content-option .add-choice {
     width: 455px;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: -0.01em;
+    color: #3F4150;
+    font-weight: 400;
     background-color: transparent;
     cursor: pointer; }
     .product-selling-content-option .product-choice:hover,
@@ -702,6 +707,116 @@ input {
       background-color: #F7F8FA; }
   .product-selling-content-option .product-choice {
     margin-bottom: 8px; }
+
+.option-choice-items {
+  position: relative;
+  z-index: 1; }
+  .option-choice-items ul {
+    position: absolute;
+    top: calc(100% - 7px);
+    left: 0;
+    z-index: 2;
+    width: 100%;
+    max-height: 0px;
+    border: 0px solid transparent;
+    background-color: transparent;
+    overflow: hidden;
+    transition: border-color 200ms ease-in, padding 200ms ease-in, max-height 200ms ease-in, box-shadow 200ms ease-in; }
+    .option-choice-items ul.show {
+      max-height: 176px;
+      border: 1px solid #E0E2E7;
+      background-color: #FFFFFF; }
+    .option-choice-items ul div,
+    .option-choice-items ul li {
+      width: 100%;
+      height: 40px;
+      padding: 10px 0 10px 16px;
+      font-size: 16px;
+      line-height: 1.5;
+      letter-spacing: -0.01em;
+      color: #3F4150;
+      font-weight: 400; }
+    .option-choice-items ul div {
+      color: #A2A5AF;
+      background-color: #F7F8FA; }
+      .option-choice-items ul div.disabled {
+        color: #E0E2E7;
+        background-color: #FFFFFF; }
+    .option-choice-items ul li:hover {
+      background-color: #F7F8FA; }
+
+.product-selling-content-option-chosen-item article {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  width: 100%;
+  height: 72px;
+  padding: 8px 8px;
+  margin-top: 8px;
+  background-color: #F7F8FA; }
+  .product-selling-content-option-chosen-item article h2 {
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: -0.01em;
+    color: #3F4150;
+    font-weight: 400; }
+  .product-selling-content-option-chosen-item article button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 12px;
+    top: 12px;
+    width: 12px;
+    height: 12px;
+    border: none;
+    background-color: inherit;
+    cursor: pointer; }
+    .product-selling-content-option-chosen-item article button i {
+      font-size: 12px;
+      color: #A2A5AF; }
+  .product-selling-content-option-chosen-item article div {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px; }
+    .product-selling-content-option-chosen-item article div select {
+      width: 80px;
+      height: 24px;
+      font-size: 14px;
+      line-height: 1.71429;
+      letter-spacing: -0.01em;
+      color: #858896;
+      font-weight: 400;
+      border: 1px solid #E0E2E7;
+      border-radius: 3px; }
+    .product-selling-content-option-chosen-item article div p {
+      font-weight: 700; }
+      .product-selling-content-option-chosen-item article div p span {
+        font-size: 16px;
+        line-height: 1.5;
+        letter-spacing: -0.01em;
+        color: #3F4150; }
+        .product-selling-content-option-chosen-item article div p span.won {
+          font-size: 14px;
+          line-height: 1.71429;
+          letter-spacing: -0.01em;
+          color: #3F4150; }
+
+.product-total-price-wrap {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 32px;
+  color: #1B1C32;
+  font-weight: 700; }
+  .product-total-price-wrap span {
+    font-size: 13px;
+    line-height: 1.53846; }
+  .product-total-price-wrap .product-total-price .number {
+    font-size: 20px; }
+  .product-total-price-wrap .product-total-price .won {
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: -0.01em; }
 
 .buy-buttons button {
   width: 223px; }

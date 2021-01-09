@@ -40,8 +40,9 @@ function createSearchListA() {
 
 function putCookie() {
     document.cookie = "search_historyies=";
-    let temp = search_histories.join('');
-    document.cookie += temp;
+    let temp = search_histories.join(',');
+    document.cookie += 'search_historyies='+temp+';';
+    console.log(document.cookie.length)
 }
 
 //input 입력이벤트 -> search-list div modal 막고, 입력하는 내용 표시

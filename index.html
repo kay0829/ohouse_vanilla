@@ -206,8 +206,57 @@
                             <span class="delivery-fee"></span>
                         </div>
                         <div class="product-selling-content-option">
-                            <input class="product-choice" name="choice" placeholder="선택" disabled/>
-                            <input class="add-choice" name="add-choice" placeholder="추가상품(선택)" disabled/>
+                            <div class="product-selling-content-option-choice">
+                                <input class="product-choice disabled" name="choice" placeholder="선택"/>
+                                <div class="option-choice-items">
+                                    <ul>
+                                        <div class="option-choice-items-header">
+                                            선택
+                                        </div>
+                                        <li>그린 H0044(32,900원)</li>
+                                        <li>화이트 H0037(32,900원)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="product-selling-content-option-add-choice">
+                                <input class="add-choice disabled" name="add-choice" placeholder="추가상품(선택)"/>
+                                <div class="option-choice-items">
+                                    <ul>
+                                        <div class="option-choice-items-header">
+                                            선택
+                                        </div>
+                                        <li>추가상품 - 맛있는 제주 감귤을 직배송(40,000원)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="product-selling-content-option-chosen-item">
+                                <!-- <article class="selling-item-option">
+                                    <h2 class="selling-item-option-name"></h2>
+                                    <button type="button"><i class="icon-close"></i></button>
+                                    <div class="selling-item-option-controls">
+                                        <select class="selling-item-option-quantaty">
+                                            <option value="0">1</option>
+                                            <option value="1">2</option>
+                                            <option value="2">3</option>
+                                            <option value="3">4</option>
+                                            <option value="4">5</option>
+                                            <option value="5">6</option>
+                                            <option value="6">7</option>
+                                            <option value="7">8</option>
+                                            <option value="8">9</option>
+                                            <option value="9">10</option>
+                                        </select>
+                                        <p class="selling-item-option-price"><span></span>원</p>
+                                    </div>
+                                </article> -->
+                            </div>
+                            <div class="product-total-price-wrap">
+                                <span>주문금액</span>
+                                <div class="product-total-price">
+                                    <span class="number">0</span>
+                                    <span class="won">원</span>
+                                </div>
+                            </div>
                         </div>
                         <div class="buy-buttons">
                             <button type="button" class="button big reverse">장바구니</button>
@@ -220,8 +269,8 @@
     </div>
 
     <script src="./js/page-header.js"></script>
-    <script src="./js/page-header-modal.js"></script>
+    <script src="./js/header-modal.js"></script>
     <script src="./js/product-carousel.js"></script>
-    <script src="./js/product-content.js"></script>
+    <script src="./js/onload.js"></script>
 </body>
 </html>

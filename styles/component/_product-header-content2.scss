@@ -5,6 +5,8 @@
     .product-choice,
     .add-choice {
         width: 455px;
+        @include base($primary);
+        font-weight: 400;
         background-color: transparent;
         cursor: pointer;
 
@@ -15,6 +17,130 @@
 
     .product-choice {
         margin-bottom: 8px;
+    }
+}
+
+.option-choice-items {
+    position: relative;
+    z-index: 1;
+
+    ul {
+        position: absolute;
+        top: calc(100% - 7px);
+        left: 0;
+        z-index: 2;
+        width: 100%;
+        max-height: 0px;
+        border: 0px solid transparent;
+        background-color: transparent;
+        overflow: hidden;
+        transition: border-color 200ms ease-in, padding 200ms ease-in,
+            max-height 200ms ease-in, box-shadow 200ms ease-in;
+
+        &.show {
+            max-height: 176px;
+            border: 1px solid $border;
+            background-color: $white;
+        }
+
+        div,
+        li {
+            width: 100%;
+            height: 40px;
+            padding: 10px 0 10px 16px;
+            @include base($primary);
+            font-weight: 400;
+        }
+        div {
+            color: $tertiary;
+            background-color: $background;
+            &.disabled {
+                color: $border;
+                background-color: $white;
+            }
+        }
+        li:hover {
+            background-color: $background;
+        }
+    }
+}
+
+.product-selling-content-option-chosen-item {
+    article {
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        width: 100%;
+        height: 72px;
+        padding: 8px 8px;
+        margin-top: 8px;
+        background-color: $background;
+
+        h2 {
+            @include base($primary);
+            font-weight: 400;
+        }
+
+        button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            right: 12px;
+            top: 12px;
+            width: 12px;
+            height: 12px;
+            border: none;
+            background-color: inherit;
+            cursor: pointer;
+            i {
+                font-size: 12px;
+                color: $tertiary;
+            }
+        }
+        div {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 8px;
+            
+            select {
+                width: 80px;
+                height: 24px;
+                @include small($secondary);
+                font-weight: 400;
+                border: 1px solid $border;
+                border-radius: 3px;
+            }
+
+            p {
+                font-weight: 700;
+                span {
+                    @include base($primary);
+                    &.won {
+                        @include small($primary);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.product-total-price-wrap {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 32px;
+    color: $dark;
+    font-weight: 700;
+    span {
+        @include tiny;
+    }
+    .product-total-price {
+        .number {
+            font-size: 20px;
+        }
+        .won {
+            @include base;
+        }
     }
 }
 
