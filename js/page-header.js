@@ -88,6 +88,7 @@ searchListA.forEach((v) => {
 closeAllButton.addEventListener('mousedown', () => {
     search_histories = [];
     console.log(search_histories);
+    searchListA.forEach((v) => v.textContent = '');
     putCookie();
     searchList.classList.remove('show');
 })
