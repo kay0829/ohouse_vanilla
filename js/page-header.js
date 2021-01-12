@@ -42,7 +42,6 @@ function putCookie() {
     document.cookie = "search_historyies=";
     let temp = search_histories.join(',');
     document.cookie += 'search_historyies='+temp+';';
-    console.log(document.cookie.length)
 }
 
 //input 입력이벤트 -> search-list div modal 막고, 입력하는 내용 표시
@@ -99,7 +98,10 @@ closeButton.forEach((v) => {
         search_histories.splice(search_histories.indexOf(v.previousElementSibling.textContent), 1);
         console.log(search_histories);
         putCookie();
-        searchList.removeChild(v.parentElement);
+        v.parentElement.childNodes[1].textContent = '';
+        if(v.parentElement.childNodes[1].textContent.length === 0) {
+            v.parentElement.classList.add('hide');
+        }
 
         if(search_histories.length === 0) {
             searchList.classList.remove('show');
