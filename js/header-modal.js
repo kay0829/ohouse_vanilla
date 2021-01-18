@@ -13,6 +13,9 @@ const addChoiceModalList = document.querySelectorAll('.product-selling-content-o
 const sellingChosenItem = document.querySelector('.product-selling-content-option-chosen-item');
 const totalPrice = document.querySelector('.product-total-price .number');
 
+const cartButton = document.querySelector('.buy-buttons .reverse');
+const buyButton = document.querySelector('.buy-buttons .buy-direct');
+
 let total_price = [0, 0, 0];
 
 userImgButton.addEventListener('click', () => {
@@ -181,4 +184,37 @@ choice.addEventListener('blur', () => {
 addChoice.addEventListener('blur', () => {
     addChoiceModal.classList.remove('show');
     addChoiceModalHeader.classList.remove('disabled');
+})
+
+cartButton.addEventListener('click', () => {
+    if(!choice_click_flag) {
+        alert('옵션 선택 후에 버튼을 클릭해주세요');
+    } else {
+        document.body.classList.add('stop-scrolling');
+        const productIntoCart = document.createElement('div');
+        productIntoCart.classList.add('put-product-into-cart');
+        const layer = document.createElement('div');
+        layer.classList.add('layer');
+        const productIntoCartWrap = document.createElement('div');
+        productIntoCartWrap.classList.add('put-product-into-cart-wrap');
+        const productIntoCartTitle = document.createElement('h1');
+        productIntoCartTitle.textContent = '장바구니에 상품을 담았습니다';
+        const productIntoCartButton = document.createElement('a');
+        productIntoCartButton.textContent = '장바구니 보러가기';
+        productIntoCartButton.classList.add('button');
+        productIntoCartButton.classList.add('big');
+        const productIntoCartClose = document.createElement('button');
+        productIntoCartClose.textContent = '확인';
+        productIntoCartClose.classList.add('button');
+        productIntoCartClose.classList.add('big');
+
+        productIntoCartClose.addEventListener('click', () => {
+            document.body.removeChild(productIntoCart);
+            document.body.classList.remove('stop-scrolling');
+        })
+
+        productIntoCartWrap.append(productIntoCartTitle, productIntoCartButton, productIntoCartClose);
+        productIntoCart.append(productIntoCartWrap, layer);
+        document.body.append(productIntoCart);
+    }
 })

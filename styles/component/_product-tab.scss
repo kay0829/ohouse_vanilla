@@ -1,0 +1,24 @@
+.product-tab {
+    background-color: $background;
+    &-list {
+        display: flex;
+        li {
+            width: 148px;
+            padding: 15px 0;
+            @include base($primary);
+            font-weight: 700;
+            text-align: center;
+            a {
+                display: inline-block;
+                &:hover {
+                    color: $blue;
+                }
+                .product-nav-review-count,
+                .product-nav-question-count {
+                    margin-left: 4px;
+                    color: $tertiary;
+                }
+            }
+        }
+    }
+}

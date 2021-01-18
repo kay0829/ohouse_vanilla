@@ -1,3 +1,7 @@
+const productSellingContentOption = document.querySelector('.product-selling-content-option');
+const optionButtons = document.querySelector('.buy-buttons');
+const optionSmall = document.querySelector('.product-selling-content-option-small');
+
 const companyName = document.querySelector('.company-name');
 const productName = document.querySelector('.product-name');
 const reviewStar = document.querySelectorAll('.review-star i');
@@ -10,8 +14,11 @@ const beforeDcPrice = document.querySelector('.product-before-dc-price .number')
 const pointGuide = document.querySelector('.point-guide span');
 const deliveryFee = document.querySelector('.delivery-fee');
 // const addChoice = document.querySelector('.add-choice');
-const cartButton = document.querySelector('.buy-buttons .reverse');
-const buyButton = document.querySelector('.buy-buttons .buy-direct');
+// const cartButton = document.querySelector('.buy-buttons .reverse');
+// const buyButton = document.querySelector('.buy-buttons .buy-direct');
+
+const reviewCount = document.querySelector('.product-nav-review-count');
+const questionCount = document.querySelector('.product-nav-question-count');
 
 const utils = document.querySelector('.utils');
 const utilsItem = document.querySelector('.utils-item');
@@ -31,8 +38,22 @@ let point = 987;
 let delivery_fee = true;
 let single_option = false;
 let sold_out = false;
+let question_count = 96;
 
 window.onload = function() {
+    const clonedOption = productSellingContentOption.cloneNode(true);
+    const clonedButtons = optionButtons.cloneNode(true);
+    const buttons = document.createElement('div');
+    buttons.classList.add('buttons');
+    const clonedBookmarkDiv = document.createElement('button');
+    clonedBookmarkDiv.classList.add('bookmark');
+    const clonedBookmark = document.createElement('i');
+    clonedBookmark.classList.add('icon-bookmark');
+    clonedBookmarkDiv.append(clonedBookmark);
+    buttons.append(clonedBookmarkDiv, clonedButtons)
+
+    optionSmall.append(clonedOption, buttons);
+
     if(!login) {
         utils.removeChild(utilsItem);
         utils.removeChild(userUtils);
@@ -108,4 +129,7 @@ window.onload = function() {
         buyButton.textContent = '품절';
         buyButton.setAttribute('disabled', '');
     }
+
+    reviewCount.textContent = review_number;
+    questionCount.textContent = question_count;
 }
