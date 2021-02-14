@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <title>회원가입</title>
+</head>
+<body>
+  <section class="sign-up-page">
+    <div class="container sign-up-page-logo">
+      <div class="page-logo">
+        <Link to="/store" >
+          <img src="./logo.svg" alt="내일의 집"/>
+        </Link>
+      </div>
+    </div>
+    <div class="container">
+      <div class="sign-up-page-wrap">
+        <h1 class="sign-up-page-title">회원가입</h1>
+        <div class="sign-up-sns">
+          <p>sns계정으로 간편하게 회원가입</p>
+          <ul class="kind-of-sns">
+            <li>
+              <button class="facebook">
+                페이스북
+              </button>
+            </li>
+            <li>
+              <button class="kakaotalk">
+                카카오톡
+              </button>
+            </li>
+            <li>
+              <button class="naver">
+                네이버
+              </button>
+            </li>
+          </ul>
+        </div>
+
+        <form action="" class="sign-up-form">
+          <div class="sign-up-form-group">
+            <h1>이메일</h1>
+            <div class="email-input">
+              <input type="text" class="email-id" placeholder="아이디"/>
+              <span class="email-seperator">@</span>
+              <select name="" id="" class="email-list">
+                <option value="">선택해주세요</option>
+                <option value="naver.com">naver.com</option>
+                <option value="hanmail.net">hanmail.net</option>
+                <option value="daum.net">daum.net</option>
+                <option value="gmail.com">gmail.com</option>
+                <option value="nate.com">nate.com</option>
+                <option value="hotmail.com">hotmail.com</option>
+                <option value="outlook.com">outlook.com</option>
+                <option value="icloud.com">icloud.com</option>
+                <option value="_manuel">직접입력</option>
+              </select>
+            </div>
+
+            <div class="sign-up-form-group">
+              <h1>비밀번호</h1>
+              <p>8자 이상 입력해주세요.</p>
+              <div class="password-input">
+                <input type="text" class="password" placeholder="비밀번호"/>
+              </div>
+            </div>
+
+            <div class="sign-up-form-group">
+              <h1>비밀번호 확인</h1>
+              <div class="password-input-check">
+                <input type="text" class="password" placeholder="비밀번호 확인"/>
+              </div>
+            </div>
+
+            <div class="sign-up-form-group">
+              <h1>별명</h1>
+              <p>다른 유저와 겹치지 않는 별명을 입력해주세요.(2~15자)</p>
+              <div class="password-input-check">
+                <input type="text" class="password" placeholder="별명(2~15자)"/>
+              </div>
+            </div>
+
+            <div class="agreement">
+              <h1 class="agreement-title">약관동의</h1>
+              <div class="agree-all">
+                <input type="checkbox"/>
+                <span>전체동의</span>
+              </div>
+
+              <div class="agreement-list">
+                <input type="checkbox"/>
+                <span>만 14세 이상입니다.<span class="agreement-requirement">(필수)</span></span>
+              </div>
+
+              <div class="agreement-list">
+                <input type="checkbox"/>
+                <Link to="/usepolicy">만 14세 이상입니다.<span class="agreement-requirement">(필수)</span></Link>
+              </div>
+
+              <div class="agreement-list">
+                <input type="checkbox"/>
+                <Link to="/privacy">개인정보처리방침<span class="agreement-requirement">(필수)</span></Link>
+              </div>
+
+              <div class="agreement-list">
+                <input type="checkbox"/>
+                <Link to="/privacy">개인정보처리방침<span class="agreement-requirement">(필수)</span></Link>
+              </div>
+
+              <div class="agreement-list">
+                <input type="checkbox"/>
+                <span>이벤트, 프로모션 알림 메일 및 SMS 수신<span class="agreement-choice">(선택)</span></span>
+              </div>
+            </div>
+
+            <button class="button">회원가입 완료</button>
+          </div>
+        </form>
+        <p class="sign-up-sign-in">
+          이미 아이디가 있으신가요? 
+          <span><Link to="/login">로그인</Link></span>
+        </p>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
