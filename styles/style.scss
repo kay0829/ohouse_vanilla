@@ -4,12 +4,14 @@
 @import './constants/colors';
 @import './constants/fonts';
 
+@import './mixins/typography';
+
 @import './modules/grids';
 @import './modules/icons';
 @import './modules/input';
 @import './modules/buttons';
+@import './modules/table';
 
-@import './mixins/typography';
 
 @import './component/page-header';
 @import './component/category-menu';
@@ -19,4 +21,7 @@
 @import './component/product-header-content2';
 @import './component/product-tab';
 @import './component/review-carousel';
-@import './component/sign-up';
+@import './component/product_selling_image';
+@import './component/product-review';
+@import './component/product-qna';
+@import './component/product-page-footer';

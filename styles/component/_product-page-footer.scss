@@ -1,0 +1,22 @@
+.product-page-footer {
+  background-color: $background;
+  padding-top: 32px;
+  padding-bottom: 44px;
+
+  &-content {
+    p {
+      @include micro($secondary);
+    }
+    &-top {
+      margin-bottom: 22px;
+      h1 {
+        @include small($primary);
+        font-weight: 700;
+      }
+      h2 {
+        @include large($primary);
+        font-weight: 700;
+      }
+    }
+  }
+}

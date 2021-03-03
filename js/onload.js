@@ -49,8 +49,11 @@ window.onload = function() {
     clonedBookmarkDiv.classList.add('bookmark');
     const clonedBookmark = document.createElement('i');
     clonedBookmark.classList.add('icon-bookmark');
+    clonedBookmarkDiv.style.border = '1px solid #E0E2E7';
+    clonedBookmarkDiv.style.backgroundColor = '#ffffff';
+    clonedBookmarkDiv.style.borderRadius = '4px';
     clonedBookmarkDiv.append(clonedBookmark);
-    buttons.append(clonedBookmarkDiv, clonedButtons)
+    buttons.append(clonedBookmarkDiv, clonedButtons);
 
     optionSmall.append(clonedOption, buttons);
 

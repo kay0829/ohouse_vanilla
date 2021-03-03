@@ -1,0 +1,66 @@
+
+
+.production-selling-qna {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 18px;
+
+  h1 {
+    display: flex;
+    @include medium($primary);
+    font-weight: 700;
+    span {
+      display: block;
+      margin-left: 8px;
+      @include medium($blue);
+    }
+  }
+
+  .writing-question {
+    color: $blue;
+    cursor: pointer;
+  }
+}
+
+.qustion-content-wrap {
+  li {
+    margin-bottom: 40px;
+    .question-content {
+      &-top {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+        span {
+          @include micro($primary);
+          .answered {
+            color: $blue;
+          }
+        }
+        .question-nickname-and-date {
+          color: $tertiary;
+        }
+      }
+      &-bottom {
+        display: flex;
+        &-left {
+          margin-right: 12px;
+          color: $blue;
+        }
+        &-right {
+          p {
+            @include base($primary);
+          }
+        }
+      }
+    }
+
+    .answer-about-qusetion-content {
+      display: flex;
+      margin-top: 14px;
+
+      span {
+        @include micro($tertiary);
+      }
+    }
+  }
+}

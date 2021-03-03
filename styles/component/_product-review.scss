@@ -1,0 +1,289 @@
+.product-review {
+  margin-bottom: 98px;
+
+  .production-selling-review {
+    display: flex;
+    justify-content: space-between;
+
+    h1 {
+      display: flex;
+      @include medium($primary);
+      font-weight: 700;
+      span {
+        display: block;
+        margin-left: 8px;
+        @include medium($blue);
+      }
+    }
+
+    .writing-review {
+      color: $blue;
+      cursor: pointer;
+    }
+  }
+
+  .star-count-wrap {
+    display: flex;
+    width: 100%;
+    height: 148px;
+    margin-top: 18px;
+    padding: 26px 0;
+    background-color: $background;
+    &-left {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 50%;
+      height: 100%;
+      margin-right: 0;
+      border-right: 1px solid $border;
+      .background-star {
+        display: flex;
+        position: relative;
+        li {
+          i {
+            color: $tertiary;
+          }
+        }
+
+        .display-star {
+          display: flex;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 75px;
+          overflow: hidden;
+          li {
+            i {
+              color: $blue;
+            }
+          }
+        }
+      }
+      span {
+        display: block;
+        margin-left: 21px;
+        @include large($dark);
+        font-weight: 700;
+      }
+    }
+
+    &-right {
+      display: flex;
+      width: 50%;
+      height: 100%;
+      padding: 0 70px;
+      .star-count-number{
+        li {
+          margin-right: 8px;
+          @include micro($tertiary);
+          margin-bottom: 4px;
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+
+      .star-count-rate-background {
+        position: relative;
+        li {
+          width: 155px;
+          height: 5px;
+          margin-bottom: 15px;
+          &:first-child {
+            margin-top: 5px;
+          }
+          &:last-child {
+            margin-bottom: 0;
+          }
+
+          div {
+            width: 100%;
+            height: 100%;
+            background-color: $tertiary;
+            border-radius: 4px;
+          }
+        }
+
+        .star-count-rate-display {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          li {
+            width: 155px;
+            height: 5px;
+            margin-bottom: 15px;
+            &:first-child {
+              margin-top: 5px;
+            }
+            &:nth-child(2) {
+              width: 15%;
+              overflow: hidden;
+            }
+            &:nth-child(3) {
+              width: 2%;
+              overflow: hidden;
+            }
+            &:nth-child(4) {
+              overflow: hidden;
+              width: 0;
+            }
+            &:last-child {
+              overflow: hidden;
+              width: 0;
+              margin-bottom: 0;
+            }
+            div {
+              width: 100%;
+              height: 100%;
+              background-color: $blue;
+              border-radius: 4px;
+            }
+          }
+        }
+      }
+
+      .star-count-number-count {
+        li {
+          margin-left: 8px;
+          @include micro($tertiary);
+          margin-bottom: 4px;
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+.review-written-by-user {
+  margin-top: 32px;
+  &-wrap {
+    li {
+      padding-top: 40px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid $border;
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+
+  .review-written-by-user-content {
+    display: flex;
+    &-left {
+      margin-right: 8px;
+      div {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        overflow: hidden;
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+    }
+
+    &-right {
+      span {
+        @include tiny($primary);
+      }
+
+      .user-info-writing-review {
+        display: flex;
+        flex-direction: column;
+
+        .user-info-star-writing-review {
+          display: flex;
+          align-items: center;
+          span {
+            @include micro($secondary);
+          }
+          ul {
+            display: flex;
+            margin-right: 4px;
+            li {
+              padding-top: 0;
+              padding-bottom: 0;
+              border-bottom: none;
+              i {
+                color: $blue;
+              }
+            }
+          }
+        }
+      }
+
+      p {
+        @include tiny($primary);
+      }
+
+      .user-upload-review-image {
+        width: 112px;
+        height: 112px;
+        margin: 20px 0;
+        border-radius: 4px;
+        overflow: hidden;
+
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+
+      .review-thumbup {
+        display: flex;
+        align-items: center;
+        margin-top: 20px;
+        button {
+          width: 120px;
+          height: 30px;
+          margin-right: 8px;
+        }
+        span {
+          font-size: 12px;
+          line-height: 16px;
+          letter-spacing: -0.05em;
+        }
+      }
+    }
+  }
+}
+
+.paging {
+  ul {
+    display: flex;
+    justify-content: center;
+
+    li {
+      margin-right: 4px;
+      :last-child {
+        margin-right: 0;
+      }
+
+      .paging-arrow {
+        border: 1px solid $border;
+        border-radius: 4px;
+        background-color: $white;
+        @include base($primary);
+
+        &.paging-left {
+            transform: rotate(90deg);
+        }
+        &.paging-right {
+          transform: rotate(270deg);
+        }
+      }
+
+      .paging-number {
+        border: none;
+        border-radius: 4px;
+        background-color: $white;
+        @include base($primary);
+      }
+    }
+  }
+}

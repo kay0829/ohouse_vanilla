@@ -59,9 +59,12 @@
 }
 
 .user-gallary-section-carousel {
+    position: relative;
     width: 672px;
     height: 520px;
     overflow: hidden;
+
+    
     
     ol {
         display: flex;

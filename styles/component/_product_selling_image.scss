@@ -1,0 +1,46 @@
+.product-selling-images {
+  margin-top: 98px;
+
+  .product-selling-information {
+    margin-bottom: 18px;
+    h1 {
+      @include medium($dark);
+    }
+  }
+
+  .images-container {
+    width: 692px;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+.product-detail-info-table {
+  margin-top: 80px;
+  margin-bottom: 98px;
+}
+
+.product-detail-info-delivery-table {
+  margin-top: 98px;
+  margin-bottom: 98px;
+  .production-selling-delivery {
+    margin-bottom: 18px;
+    h1 {
+      @include medium($primary);
+    }
+  }
+}
+
+.product-detail-info-return-table {
+  margin-top: 98px;
+  margin-bottom: 80px;
+  .production-selling-delivery {
+    margin-bottom: 18px;
+    h1 {
+      @include medium($primary);
+    }
+  }
+}
