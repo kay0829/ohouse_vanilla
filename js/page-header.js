@@ -6,13 +6,13 @@ const closeButton = document.querySelectorAll('.search-list li button');
 const writeForSearch = document.querySelector('.write-for-search');
 const writingForSearch = document.querySelector('.write-for-search li');
 
-document.cookie = "search_historyies=";
 let search_histories = ['의자', '책상', '에어프라이어'];
 
-//input 클릭이벤트 -> search-list div modal
+//input 클릭이벤트 -> search-list div dropdown
 searchInput.addEventListener('mousedown', (e) => {
     if(e.target.value.length === 0 && search_histories.length) {
         searchList.classList.add('show');
+        //배열의 value를 li에 담는 과정
         createSearchListA();
     } else {
         searchList.classList.remove('show');
@@ -21,15 +21,16 @@ searchInput.addEventListener('mousedown', (e) => {
 
 //입력된 순서대로 앵커에 검색기록을 담음
 function createSearchListA() {
+    //4. 배열의 길이가 5이상이면 첫 value 삭제
     if(search_histories.length > 5) {
         search_histories.shift();
-        putCookie();
         console.log(search_histories);
     }
     search_histories.forEach((v, i) => {
         searchListA[searchListA.length - 1 - i].textContent = v;
     })
     searchListA.forEach((v) => {
+        //1. 배열 길이 외에 li는 숨기기
         if(v.textContent.length === 0) {
             v.parentElement.classList.add('hide');
         } else {
@@ -38,11 +39,6 @@ function createSearchListA() {
     })
 }
 
-function putCookie() {
-    document.cookie = "search_historyies=";
-    let temp = search_histories.join(',');
-    document.cookie += 'search_historyies='+temp+';';
-}
 
 //input 입력이벤트 -> search-list div modal 막고, 입력하는 내용 표시
 searchInput.addEventListener('input', (e) => {
@@ -58,17 +54,19 @@ searchInput.addEventListener('input', (e) => {
 searchInput.addEventListener('keydown', (e) =>{
     if (e.keyCode === 13) {
         writeForSearch.classList.remove('show');
+        //2. 입력하지 않은 채 enter 눌렀을 때 
         if(e.target.value.length === 0) {
             return 0;
         }
+        //3. 배열에 있는 text를 다시 한번 검색했을 경우
         if(search_histories.includes(e.target.value)) {
             search_histories.splice(search_histories.indexOf(e.target.value), 1);
-            putCookie();
+            
         }
         searchInput.textContent = e.target.value;
         search_histories.push(e.target.value);
         console.log(search_histories);
-        putCookie();
+        
         // window.location.href = `q?=${e.target.value}`;
     }
 })
@@ -84,21 +82,20 @@ searchListA.forEach((v) => {
     })
 })
 
-//전체 삭제 클릭 시 모든 li 삭제
+//전체 삭제 클릭 시 배열 초기화 및 모든 li 'hide'
 closeAllButton.addEventListener('mousedown', () => {
     search_histories = [];
     console.log(search_histories);
     searchListA.forEach((v) => v.textContent = '');
-    putCookie();
     searchList.classList.remove('show');
 })
 
+//삭제 버튼 클릭 시 해당 text 배열에서 지우고 li 'hide'
 closeButton.forEach((v) => {
     v.addEventListener('mousedown', (e) => {
         e.preventDefault();
         search_histories.splice(search_histories.indexOf(v.previousElementSibling.textContent), 1);
         console.log(search_histories);
-        putCookie();
         v.parentElement.childNodes[1].textContent = '';
         if(v.parentElement.childNodes[1].textContent.length === 0) {
             v.parentElement.classList.add('hide');
